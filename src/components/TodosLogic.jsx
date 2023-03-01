@@ -28,10 +28,20 @@ const TodosLogic = () => {
           }),
         ]);
       };
+
+      const addTodoItem = (todo) => {
+        const newTodo = {
+            id: 4,
+            title: todo,
+            completed: false,
+          };
+          setTodos([...todos, newTodo]);
+
+      }
       
     return (
         <div>
-            <InputTodo />
+            <InputTodo addTodoItem={addTodoItem}/>
             <TodosList todosProps={todos} setTodos={setTodos} delTodo={delTodo}/>
         </div>
     );
