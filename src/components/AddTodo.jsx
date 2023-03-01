@@ -1,6 +1,7 @@
 import { useState } from "react"
 const AddTodo = ({ addTodoItem }) => {
   const [todo, setTodo] = useState("")
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     setTodo(e.target.value);
@@ -11,8 +12,9 @@ const AddTodo = ({ addTodoItem }) => {
     if (todo.trim()) {
       addTodoItem(todo);
       setTodo('');
+      setMessage('');
     } else {
-      alert('Please add a todo item');
+      setMessage('Please add a todo item');
     }
   };
   return (
@@ -22,6 +24,7 @@ const AddTodo = ({ addTodoItem }) => {
           <input type="text" value={todo} onChange={handleChange} placeholder="Add todo..."/>
           <button>Submit</button>
       </form>
+      <span>{message}</span>
     </>
   );
 };
