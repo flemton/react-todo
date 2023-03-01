@@ -1,5 +1,7 @@
+import AddTodo from "./AddTodo";
+
 const InputTodo = () => {
-    return <div>input field here...</div>;
+    return <div><AddTodo/></div>;
   };
   export default InputTodo;
   

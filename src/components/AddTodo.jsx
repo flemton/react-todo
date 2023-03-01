@@ -1,15 +1,19 @@
 import { useState } from "react"
-const  = () => {
-  const [fname, setFname] = useState("")
+const AddTodo = () => {
+  const [todo, setTodo] = useState("")
+
+  const handleChange = (e) => {
+    setTodo(e.target.value);
+  };
   return (
     <>
       <h1>Controlled Form</h1>
       <form>
         <label>
-          First Name: <input type="text" value={fname} />
+          <input type="text" value={todo} onChange={handleChange} placeholder="Add todo..."/>
         </label>
       </form>
     </>
   );
 };
-export default Form;
+export default AddTodo;
