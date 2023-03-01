@@ -8,8 +8,12 @@ const AddTodo = ({ addTodoItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodoItem(todo)
-    setTodo('');
+    if (todo.trim()) {
+      addTodoItem(todo);
+      setTodo('');
+    } else {
+      alert('Please add a todo item');
+    }
   };
   return (
     <>
